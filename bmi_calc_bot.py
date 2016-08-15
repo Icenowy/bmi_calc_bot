@@ -17,7 +17,7 @@ def bmi(bot, update):
             height /= 100.0
         bmi = weight/height/height
         if (bmi > 30):
-            outtext = 'The value is ridiculous. (It\'s %s)\nYou should input the weight as kilogram, not JIN!' % (str(bmi))
+            outtext = 'The value seems to be too heavy. (It\'s %s)\nYou should input the weight as kilogram, not JIN!' % (str(bmi))
         else:
             outtext = str(weight/height/height)
     except ValueError:
