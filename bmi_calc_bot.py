@@ -15,7 +15,11 @@ def bmi(bot, update):
         weight = float(texts[2])
         if (height > 3):
             height /= 100.0
-        outtext = str(weight/height/height)
+        bmi = weight/height/height
+        if (bmi > 30):
+            outtext = 'The value is ridiculous. (It\'s %s)\nYou should input the weight as kilogram, not JIN!' % (str(bmi))
+        else:
+            outtext = str(weight/height/height)
     except ValueError:
         outtext = 'invalid input, format is: /bmi height(in cm or m) weight(in kg)'
     bot.sendMessage(update.message.chat_id, text=outtext)
